@@ -59,65 +59,65 @@ class Player(BasePlayer):
 def set_payoffs(group: Group):
     players = group.get_players()
     for player in players:
-        if player.pregunta_3 == '7':
+        if player.field_maybe_none('pregunta_3') == '7':
             player.correct_answers += 1
-        if player.pregunta_6 == '1':
+        if player.field_maybe_none('pregunta_6') == '1':
             player.correct_answers += 1   
-        if player.pregunta_14 == '8':
+        if player.field_maybe_none('pregunta_14') == '8':
             player.correct_answers += 1
         if player.field_maybe_none('pregunta_28') == '3':
             player.correct_answers += 1  
-        if player.pregunta_31 == "2":
+        if player.field_maybe_none('pregunta_31') == "2":
             player.correct_answers += 1
-        if player.pregunta_34 == "5":
+        if player.field_maybe_none('pregunta_34') == "5":
             player.correct_answers += 1     
-        if player.pregunta_37 == "4":
+        if player.field_maybe_none('pregunta_37') == "4":
             player.correct_answers += 1
-        if player.pregunta_40 == "6":
+        if player.field_maybe_none('pregunta_40') == "6":
             player.correct_answers += 1
         if player.field_maybe_none('secuencia_numero_1') == '-5':
             player.correct_answers += 1
         if player.field_maybe_none('secuencia_numero_4') == '11':
             player.correct_answers += 1
-        if player.secuencia_numero_7 == '174':
+        if player.field_maybe_none('secuencia_numero_7') == '174':
             player.correct_answers += 1
-        if player.secuencia_numero_10 == '16':
+        if player.field_maybe_none('secuencia_numero_10') == '16':
             player.correct_answers += 1
-        if player.secuencia_numero_13 == '30':
+        if player.field_maybe_none('secuencia_numero_13') == '30':
             player.correct_answers += 1
-        if player.secuencia_numero_16 == '4':
+        if player.field_maybe_none('secuencia_numero_16') == '4':
             player.correct_answers += 1
-        if player.secuencia_numero_19 == '741':
+        if player.field_maybe_none('secuencia_numero_19') == '741':
             player.correct_answers += 1
-        if player.secuencia_numero_22 == '50':
+        if player.field_maybe_none('secuencia_numero_22') == '50':
             player.correct_answers += 1
-        if player.secuencia_numero_25 == '38':
+        if player.field_maybe_none('secuencia_numero_25') == '38':
             player.correct_answers += 1
-        if player.secuencia_numero_28 == '41':
+        if player.field_maybe_none('secuencia_numero_28') == '41':
             player.correct_answers += 1
-        if player.secuencia_numero_31 == '1024':
+        if player.field_maybe_none('secuencia_numero_31')== '1024':
             player.correct_answers += 1
-        if player.secuencia_numero_34 == '37':
+        if player.field_maybe_none('secuencia_numero_34') == '37':
             player.correct_answers += 1
-        if player.secuencia_numero_37 == '1003':
+        if player.field_maybe_none('secuencia_numero_37') == '1003':
             player.correct_answers += 1
-        if player.secuencia_letra_1 == 'M':
+        if player.field_maybe_none('secuencia_letra_1') == 'M':
             player.correct_answers += 1
-        if player.secuencia_letra_4 == 'G':
+        if player.field_maybe_none('secuencia_letra_4') == 'G':
             player.correct_answers += 1
-        if player.secuencia_letra_7 == 'O':
+        if player.field_maybe_none('secuencia_letra_7') == 'O':
             player.correct_answers += 1
-        if player.secuencia_letra_10 == 'd':
+        if player.field_maybe_none('secuencia_letra_10') == 'd':
             player.correct_answers += 1
-        if player.secuencia_letra_13 == 'u':
+        if player.field_maybe_none('secuencia_letra_13') == 'u':
             player.correct_answers += 1
-        if player.secuencia_letra_16 == 'ñ' or player.secuencia_letra_16 == 'o':
+        if player.field_maybe_none('secuencia_letra_16') == 'ñ' or player.field_maybe_none('secuencia_letra_16') == 'o':
             player.correct_answers += 1
-        if player.secuencia_letra_19 == 'r':
+        if player.field_maybe_none('secuencia_letra_19') == 'r':
             player.correct_answers += 1
-        if player.secuencia_letra_22 == 'B':
+        if player.field_maybe_none('secuencia_letra_22') == 'B':
             player.correct_answers += 1
-        if player.secuencia_letra_25 == 'K15':
+        if player.field_maybe_none('secuencia_letra_25') == 'K15':
             player.correct_answers += 1
     for player in players:
             player.payoff = player.correct_answers*0.05
@@ -139,7 +139,7 @@ class Introduction(Page):
         import time
 
         # remember to add 'expiry' to PARTICIPANT_FIELDS.
-        participant.expiry = time.time() + 5*60
+        participant.expiry = time.time() + 1*60
 
 class Pregunta_3(Page):
     form_model = "player"
