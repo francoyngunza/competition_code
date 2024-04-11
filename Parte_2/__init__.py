@@ -65,7 +65,7 @@ def set_payoffs(group: Group):
             player.correct_answers += 1   
         if player.pregunta_14 == '8':
             player.correct_answers += 1
-        if player.field_maybe_none(pregunta_28) == '3':
+        if player.field_maybe_none('pregunta_28') == '3':
             player.correct_answers += 1  
         if player.pregunta_31 == "2":
             player.correct_answers += 1
@@ -75,9 +75,9 @@ def set_payoffs(group: Group):
             player.correct_answers += 1
         if player.pregunta_40 == "6":
             player.correct_answers += 1
-        if player.secuencia_numero_1 == '-5':
+        if player.field_maybe_none('secuencia_numero_1') == '-5':
             player.correct_answers += 1
-        if player.secuencia_numero_4 == '11':
+        if player.field_maybe_none('secuencia_numero_4') == '11':
             player.correct_answers += 1
         if player.secuencia_numero_7 == '174':
             player.correct_answers += 1
