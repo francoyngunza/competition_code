@@ -27,7 +27,7 @@ class Player(BasePlayer):
     ], widget=widgets.RadioSelectHorizontal)
 
     pregunta_5 = models.StringField(label="¿Cuál figura completa lógicamente la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
-    pregunta_8 = models.IntegerField(label="Determina que número debe reemplazar el signo de interrogación:", null=True)
+    pregunta_8 = models.IntegerField(label="Determina que número debe reemplazar el signo de interrogación:", blank=True)
     pregunta_16 = models.StringField(label="Selecciona la figura que mejor completa la analogía", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
     pregunta_30 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"], blank=True)
     pregunta_33 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"], blank=True)
@@ -35,20 +35,20 @@ class Player(BasePlayer):
     pregunta_39 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
 
     #Secuencias numéricas
-    secuencia_numero_3 = models.IntegerField(label="¿Qué número continúa?", null=True)
-    secuencia_numero_6 = models.IntegerField(label="¿Qué número continúa?", null=True)
-    secuencia_numero_9 = models.IntegerField(label="¿Qué número continúa?", null=True)
-    secuencia_numero_12 = models.IntegerField(label="¿Qué número continúa?", null=True)
-    secuencia_numero_15 = models.IntegerField(label="¿Qué número continúa?", null=True)
-    secuencia_numero_18 = models.IntegerField(label="¿Qué número continúa?", null=True)
-    secuencia_numero_21 = models.IntegerField(label="¿Qué número continúa?", null=True)    
-    secuencia_numero_24 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_3 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_6 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_9 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_12 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_15 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_18 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_21 = models.IntegerField(label="¿Qué número continúa?", blank=True)    
+    secuencia_numero_24 = models.IntegerField(label="¿Qué número continúa?", blank=True)
     secuencia_numero_27 = models.StringField(label="¿Qué elemento continúa?", blank=True)
-    secuencia_numero_30 = models.IntegerField(label="¿Qué número continúa?", null=True)
-    secuencia_numero_33 = models.IntegerField(label="¿Qué número continúa?", null=True)
-    secuencia_numero_36 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_30 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_33 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_36 = models.IntegerField(label="¿Qué número continúa?", blank=True)
     secuencia_numero_39 = models.StringField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_40 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_40 = models.IntegerField(label="¿Qué número continúa?", blank=True)
 
     #Secuencias de letras
     secuencia_letra_3 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
@@ -491,6 +491,9 @@ class Results_copy(Page):
     def vars_for_template(player: Player):
         rpta = player.correct_answers
         return {"rpta": rpta}
+    
+class Final_Page(Page):
+    pass
 
 
 page_sequence = [
@@ -529,5 +532,6 @@ page_sequence = [
     secuencia_letra_27,
     ResultsWaitPage,
     Results_copy,
+    Final_Page,
     #FinalResults,
 ]
