@@ -5,160 +5,6 @@ import re
 
 
 
-# doc = """
-# This is a standard 2-player trust game where the amount sent by player 1 gets
-# tripled. The trust game was first proposed by
-# <a href="http://econweb.ucsd.edu/~jandreon/Econ264/papers/Berg%20et%20al%20GEB%201995.pdf" target="_blank">
-#     Berg, Dickhaut, and McCabe (1995)
-# </a>.
-# """
-
-
-# class C(BaseConstants):
-#     NAME_IN_URL = 'trust'
-#     PLAYERS_PER_GROUP = 2
-#     NUM_ROUNDS = 3
-#     # Initial amount allocated to each player
-#     ENDOWMENT = cu(50)
-#     MULTIPLIER = 3
-#     FM_ROLE = 'First mover'
-#     SM_ROLE = 'Second mover'
-
-
-
-# class Subsession(BaseSubsession):
-#     pass
-
-
-# class Group(BaseGroup):
-#     sent_amount = models.CurrencyField(
-#         min=0,
-#         max=C.ENDOWMENT,
-#         doc="""Amount sent by P1""",
-#         label="Please enter an amount from 0 to 100:",
-#     )
-#     sent_back_amount = models.CurrencyField(doc="""Amount sent back by P2""", min=cu(0))
-
-
-# class Player(BasePlayer):
-#     pass
-
-
-# # FUNCTIONS
-# def sent_back_amount_max(group: Group):
-#     return group.sent_amount * C.MULTIPLIER
-
-
-
-# def set_payoffs(group: Group):
-#     p1 = group.get_player_by_id(1)
-#     p2 = group.get_player_by_id(2)
-#     p1.payoff = C.ENDOWMENT - group.sent_amount + group.sent_back_amount
-#     p2.payoff = group.sent_amount * C.MULTIPLIER - group.sent_back_amount
-
-
-# # Funciones avanzadas> lista desplegable
-# def sent_amount_choices(group: Group):
-#     montos = range(0,int(C.ENDOWMENT)+1,5)
-#     lista = list(montos)
-#     choices = lista
-#     return(choices)
-
-# def creating_session(self):
-#     self.group_randomly()
-
-# # PAGES
-# class Introduction(Page):
-#     @staticmethod
-#     def is_displayed(player: Player):
-#         return player.round_number == 1
-
-
-# class Send(Page):
-    
-#     """This page is only for P1
-#     P1 sends amount (all, some, or none) to P2
-#     This amount is tripled by experimenter,
-#     i.e if sent amount by P1 is 5, amount received by P2 is 15"""
-
-#     form_model = 'group'
-#     form_fields = ['sent_amount']
-#     timeout_seconds = 60
-
-#     @staticmethod
-#     def is_displayed(player: Player):
-#         return player.id_in_group == 1
-
-
-# class SendBackWaitPage(WaitPage):
-#     title_text = "Por favor, espere"
-#     body_text = "Esperando a que los otros participantes tomen una decisión"
-#     pass
-
-
-# class SendBack(Page):
-#     """This page is only for P2
-#     P2 sends back some amount (of the tripled amount received) to P1"""
-
-#     form_model = 'group'
-#     form_fields = ['sent_back_amount']
-#     timeout_seconds = 60
-
-#     @staticmethod
-#     def is_displayed(player: Player):
-#         return player.id_in_group == 2
-
-#     @staticmethod
-#     def vars_for_template(player: Player):
-#         group = player.group
-
-#         tripled_amount = group.sent_amount * C.MULTIPLIER
-#         return dict(tripled_amount=tripled_amount)
-    
-
-
-# class ResultsWaitPage(WaitPage):
-#     title_text = "Por favor, espere"
-#     body_text = "Esperando a que los otros participantes tomen una decisión"
-#     after_all_players_arrive = set_payoffs
-    
-
-
-# class Results(Page):
-#     """This page displays the earnings of each player"""
-
-#     @staticmethod
-#     def vars_for_template(player: Player):
-#         group = player.group
-        
-#         return dict(tripled_amount=group.sent_amount * C.MULTIPLIER)
-
-
-# class FinalResults(Page):
-#     """This page shows the final payoff for each player"""
-    
-#     @staticmethod
-#     def is_displayed(player: Player):
-#         return player.round_number == C.NUM_ROUNDS
-
-#     @staticmethod
-#     def vars_for_template(player: Player):
-#         round_payoffs = [player.in_round(r).payoff for r in range(1, C.NUM_ROUNDS + 1)]
-#         # Seleccionar aleatoriamente un pago entre los obtenidos en las tres rondas
-#         final_payoff = random.choice(round_payoffs)
-#         return {'final_payoff': final_payoff}
-
-
-# page_sequence = [
-#     Introduction,
-#     Send,
-#     SendBackWaitPage,
-#     SendBack,
-#     ResultsWaitPage,
-#     Results,
-#     FinalResults,
-# ]
-
 class C(BaseConstants):
     NAME_IN_URL = 'Parte_3_1'
     PLAYERS_PER_GROUP = 4
@@ -219,65 +65,65 @@ class Player(BasePlayer):
 def set_payoffs(group: Group):
     players = group.get_players()
     for player in players:
-        if player.pregunta_5 == '2':
+        if player.field_maybe_none('pregunta_5') == '2':
             player.correct_answers += 1
-        if player.pregunta_8 == '26':
+        if player.field_maybe_none('pregunta_8') == '26':
             player.correct_answers += 1
-        if player.pregunta_16 == '1':
+        if player.field_maybe_none('pregunta_16') == '1':
             player.correct_answers += 1   
-        if player.pregunta_30 == '2':
+        if player.field_maybe_none('pregunta_30') == '2':
             player.correct_answers += 1     
-        if player.pregunta_33 == '4':
+        if player.field_maybe_none('pregunta_33') == '4':
             player.correct_answers += 1
-        if player.pregunta_36 == '1':
+        if player.field_maybe_none('pregunta_36') == '1':
             player.correct_answers += 1     
-        if player.pregunta_39 == '4':
+        if player.field_maybe_none('pregunta_39') == '4':
             player.correct_answers += 1
-        if player.secuencia_numero_3 == '405':
+        if player.field_maybe_none('secuencia_numero_3') == '405':
             player.correct_answers += 1
-        if player.secuencia_numero_6 == '186':
+        if player.field_maybe_none('secuencia_numero_6') == '186':
             player.correct_answers += 1
-        if player.secuencia_numero_9 == '90':
+        if player.field_maybe_none('secuencia_numero_9') == '90':
             player.correct_answers += 1
-        if player.secuencia_numero_12 == '66':
+        if player.field_maybe_none('secuencia_numero_12') == '66':
             player.correct_answers += 1
-        if player.secuencia_numero_15 == '47':
+        if player.field_maybe_none('secuencia_numero_15') == '47':
             player.correct_answers += 1
-        if player.secuencia_numero_18 == '751':
+        if player.field_maybe_none('secuencia_numero_18') == '751':
             player.correct_answers += 1
-        if player.secuencia_numero_21 == '8':
+        if player.field_maybe_none('secuencia_numero_21') == '8':
             player.correct_answers += 1
-        if player.secuencia_numero_24 == '21':
+        if player.field_maybe_none('secuencia_numero_24') == '21':
             player.correct_answers += 1
-        if player.secuencia_numero_27 == '6U':
+        if player.field_maybe_none('secuencia_numero_27') == '6U':
             player.correct_answers += 1
-        if player.secuencia_numero_30 == '1128':
+        if player.field_maybe_none('secuencia_numero_30') == '1128':
             player.correct_answers += 1
-        if player.secuencia_numero_33 == '11':
+        if player.field_maybe_none('secuencia_numero_33') == '11':
             player.correct_answers += 1
-        if player.secuencia_numero_36 == '90':
+        if player.field_maybe_none('secuencia_numero_36') == '90':
             player.correct_answers += 1
-        if player.secuencia_numero_39 == '3/125':
+        if player.field_maybe_none('secuencia_numero_39') == '3/125':
             player.correct_answers += 1
-        if player.secuencia_numero_40 == 7:
+        if player.field_maybe_none('secuencia_numero_40') == 7:
             player.correct_answers += 1
-        if player.secuencia_letra_3 == 'A':
+        if player.field_maybe_none('secuencia_letra_3') == 'A':
             player.correct_answers += 1
-        if player.secuencia_letra_6 == 'K':
+        if player.field_maybe_none('secuencia_letra_6') == 'K':
             player.correct_answers += 1
-        if player.secuencia_letra_9 == 'J':
+        if player.field_maybe_none('secuencia_letra_9') == 'J':
             player.correct_answers += 1
-        if player.secuencia_letra_12 == 'r':
+        if player.field_maybe_none('secuencia_letra_12') == 'r':
             player.correct_answers += 1
-        if player.secuencia_letra_15 == 'a':
+        if player.field_maybe_none('secuencia_letra_15') == 'a':
             player.correct_answers += 1
-        if player.secuencia_letra_18 == 'e':
+        if player.field_maybe_none('secuencia_letra_18') == 'e':
             player.correct_answers += 1
-        if player.secuencia_letra_21 == 'U':
+        if player.field_maybe_none('secuencia_letra_21') == 'U':
             player.correct_answers += 1
-        if player.secuencia_letra_24 == 'I':
+        if player.field_maybe_none('secuencia_letra_24') == 'I':
             player.correct_answers += 1
-        if player.secuencia_letra_27 == 'V-10':
+        if player.field_maybe_none('secuencia_letra_27') == 'V-10':
             player.correct_answers += 1
     winner = max(players, key=lambda player: player.correct_answers)
     winner.is_winner = True
@@ -332,7 +178,7 @@ class player_choice(Page):
         import time
 
         # remember to add 'expiry' to PARTICIPANT_FIELDS.
-        participant.expiry = time.time() + 5*60
+        participant.expiry = time.time() + 1*60
 
 class Introduction(Page):
     pass
