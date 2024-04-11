@@ -23,25 +23,25 @@ class Player(BasePlayer):
     pregunta_3 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"])
     pregunta_6 = models.StringField(label="¿Cuál figura completa lógicamente la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"])
     pregunta_14 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"])
-    pregunta_28 = models.IntegerField(label="Determina que número debe reemplazar el signo de interrogación:")
+    pregunta_28 = models.StringField(label="Determina que número debe reemplazar el signo de interrogación:")
     pregunta_31 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"])
     pregunta_34 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"])
     pregunta_37 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"])
     pregunta_40 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"])
 
     #Secuencias numéricas
-    secuencia_numero_1 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_4 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_7 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_10 = models.IntegerField(label="¿Qué número continúa?")    
-    secuencia_numero_13 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_16 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_19 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_22 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_25 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_28 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_31 = models.IntegerField(label="¿Qué número continúa?")    
-    secuencia_numero_34 = models.IntegerField(label="¿Qué número continúa?")
+    secuencia_numero_1 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_4 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_7 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_10 = models.StringField(label="¿Qué número continúa?")    
+    secuencia_numero_13 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_16 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_19 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_22 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_25 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_28 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_31 = models.StringField(label="¿Qué número continúa?")    
+    secuencia_numero_34 = models.StringField(label="¿Qué número continúa?")
     secuencia_numero_37 = models.StringField(label="¿Qué número continúa?")
 
     #Secuencias de letras
@@ -55,36 +55,6 @@ class Player(BasePlayer):
     secuencia_letra_22 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
     secuencia_letra_25 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
 
-
-    # def is_pregunta_3_correct(self):
-    #     return self.pregunta_3 == "7"
-
-    # def is_pregunta_4_correct(self):
-    #     return self.pregunta_4 == "6"
-    
-    # def is_pregunta_5_correct(self):
-    #     return self.pregunta_5 == "2"
-    
-    # def is_pregunta_6_correct(self):
-    #     return self.pregunta_6 == "4"
-    
-    # def is_pregunta_7_correct(self):
-    #     return self.pregunta_7 == 12
-    
-    # def calculate_payment(self):
-    #     correct_answers = 0
-    #     if self.is_pregunta_3_correct():
-    #         correct_answers += 1
-    #     if self.is_pregunta_4_correct():
-    #         correct_answers += 1
-    #     if self.is_pregunta_5_correct():
-    #         correct_answers += 1
-    #     if self.is_pregunta_6_correct():
-    #         correct_answers += 1
-    #     if self.is_pregunta_7_correct():
-    #         correct_answers += 1    
-
-    #     return correct_answers * 0.05  #0.05PEN por respuesta correcta
     
 def set_payoffs(group: Group):
     players = group.get_players()
@@ -95,7 +65,7 @@ def set_payoffs(group: Group):
             player.correct_answers += 1   
         if player.pregunta_14 == '8':
             player.correct_answers += 1
-        if player.pregunta_28 == 3:
+        if player.pregunta_28 == '3':
             player.correct_answers += 1  
         if player.pregunta_31 == "2":
             player.correct_answers += 1
@@ -105,31 +75,31 @@ def set_payoffs(group: Group):
             player.correct_answers += 1
         if player.pregunta_40 == "6":
             player.correct_answers += 1
-        if player.secuencia_numero_1 == -5:
+        if player.secuencia_numero_1 == '-5':
             player.correct_answers += 1
-        if player.secuencia_numero_4 == 11:
+        if player.secuencia_numero_4 == '11':
             player.correct_answers += 1
-        if player.secuencia_numero_7 == 174:
+        if player.secuencia_numero_7 == '174':
             player.correct_answers += 1
-        if player.secuencia_numero_10 == 16:
+        if player.secuencia_numero_10 == '16':
             player.correct_answers += 1
-        if player.secuencia_numero_13 == 30:
+        if player.secuencia_numero_13 == '30':
             player.correct_answers += 1
-        if player.secuencia_numero_16 == 4:
+        if player.secuencia_numero_16 == '4':
             player.correct_answers += 1
-        if player.secuencia_numero_19 == 741:
+        if player.secuencia_numero_19 == '741':
             player.correct_answers += 1
-        if player.secuencia_numero_22 == 50:
+        if player.secuencia_numero_22 == '50':
             player.correct_answers += 1
-        if player.secuencia_numero_25 == 38:
+        if player.secuencia_numero_25 == '38':
             player.correct_answers += 1
-        if player.secuencia_numero_28 == 41:
+        if player.secuencia_numero_28 == '41':
             player.correct_answers += 1
-        if player.secuencia_numero_31 == 1024:
+        if player.secuencia_numero_31 == '1024':
             player.correct_answers += 1
-        if player.secuencia_numero_34 == 37:
+        if player.secuencia_numero_34 == '37':
             player.correct_answers += 1
-        if player.secuencia_numero_37 == 1003:
+        if player.secuencia_numero_37 == '1003':
             player.correct_answers += 1
         if player.secuencia_letra_1 == 'M':
             player.correct_answers += 1

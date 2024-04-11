@@ -169,8 +169,8 @@ class Subsession(BaseSubsession):
     pass
 
 class Group(BaseGroup):
-    max_correct_answers = models.IntegerField()
-    num_winners = models.IntegerField()
+    max_correct_answers = models.StringField()
+    num_winners = models.StringField()
 
 
 class Player(BasePlayer):
@@ -178,7 +178,7 @@ class Player(BasePlayer):
     correct_answers = models.IntegerField(initial=0)
 
     pregunta_4 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"], )
-    pregunta_7 = models.IntegerField(label="Determina que número debe reemplazar el signo de interrogación:")
+    pregunta_7 = models.StringField(label="Determina que número debe reemplazar el signo de interrogación:")
     pregunta_15 = models.StringField(label="Selecciona la figura que mejor completa la analogía", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], )
     pregunta_29 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"], )
     pregunta_32 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"], )
@@ -187,19 +187,19 @@ class Player(BasePlayer):
     pregunta_41 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], )
 
     #Secuencias numéricas
-    secuencia_numero_2 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_5 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_8 = models.IntegerField(label="¿Qué número continúa?")  
+    secuencia_numero_2 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_5 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_8 = models.StringField(label="¿Qué número continúa?")  
     secuencia_numero_11 = models.StringField(label="¿Qué número continúa?", )
-    secuencia_numero_14 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_17 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_20 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_23 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_26 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_29 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_32 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_35 = models.IntegerField(label="¿Qué número continúa?")
-    secuencia_numero_38 = models.IntegerField(label="¿Qué número continúa?")
+    secuencia_numero_14 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_17 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_20 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_23 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_26 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_29 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_32 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_35 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_38 = models.StringField(label="¿Qué número continúa?")
 
     #Secuencias de letras
     secuencia_letra_2 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', )
@@ -218,45 +218,45 @@ def set_payoffs(group: Group):
     for player in players:
         if player.pregunta_4 == '6':
             player.correct_answers += 1  
-        if player.pregunta_7 == 12:
+        if player.pregunta_7 == '12':
             player.correct_answers += 1
         if player.pregunta_15 == '6':
             player.correct_answers += 1
-        if player.pregunta_29 == 2:
+        if player.pregunta_29 == '2':
             player.correct_answers += 1
-        if player.pregunta_32 == 2:
+        if player.pregunta_32 == '2':
             player.correct_answers += 1     
-        if player.pregunta_35 == 4:
+        if player.pregunta_35 == '4':
             player.correct_answers += 1
-        if player.pregunta_38 == 5:
+        if player.pregunta_38 == '5':
             player.correct_answers += 1    
-        if player.pregunta_41 == 2:
+        if player.pregunta_41 == '2':
             player.correct_answers += 1
-        if player.secuencia_numero_2 == 65:
+        if player.secuencia_numero_2 == '65':
             player.correct_answers += 1
-        if player.secuencia_numero_5 == 2520:
+        if player.secuencia_numero_5 == '2520':
             player.correct_answers += 1
-        if player.secuencia_numero_8 == 8552:
+        if player.secuencia_numero_8 == '8552':
             player.correct_answers += 1
-        if player.secuencia_numero_11 == 17/49:
+        if player.secuencia_numero_11 == '17/49':
             player.correct_answers += 1
-        if player.secuencia_numero_14 == 178:
+        if player.secuencia_numero_14 == '178':
             player.correct_answers += 1
-        if player.secuencia_numero_17 == 56:
+        if player.secuencia_numero_17 == '56':
             player.correct_answers += 1
-        if player.secuencia_numero_20 == 40:
+        if player.secuencia_numero_20 == '40':
             player.correct_answers += 1
-        if player.secuencia_numero_23 == 41:
+        if player.secuencia_numero_23 == '41':
             player.correct_answers += 1
-        if player.secuencia_numero_26 == 48:
+        if player.secuencia_numero_26 == '48':
             player.correct_answers += 1
-        if player.secuencia_numero_29 == 36:
+        if player.secuencia_numero_29 == '36':
             player.correct_answers += 1
-        if player.secuencia_numero_32 == 44:
+        if player.secuencia_numero_32 == '44':
             player.correct_answers += 1
-        if player.secuencia_numero_35 == -1:
+        if player.secuencia_numero_35 == '-1':
             player.correct_answers += 1
-        if player.secuencia_numero_38 == 7:
+        if player.secuencia_numero_38 == '7':
             player.correct_answers += 1
         if player.secuencia_letra_2 == 'N':
             player.correct_answers += 1
