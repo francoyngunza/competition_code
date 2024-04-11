@@ -65,7 +65,7 @@ def set_payoffs(group: Group):
             player.correct_answers += 1   
         if player.pregunta_14 == '8':
             player.correct_answers += 1
-        if player.pregunta_28 == '3':
+        if player.field_maybe_none(pregunta_28) == '3':
             player.correct_answers += 1  
         if player.pregunta_31 == "2":
             player.correct_answers += 1
@@ -180,6 +180,7 @@ class Pregunta_28(Page):
     @staticmethod
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
+    
 
 class Pregunta_31(Page):
     form_model = "player"
