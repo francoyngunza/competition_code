@@ -280,7 +280,7 @@ class Introduction(Page):
     pass
 
 class Pagina_1(Page):
-    timeout_seconds = 720
+    timeout_seconds = 420
     form_model = 'player'
     form_fields = []
     for i in range(1, 76):
