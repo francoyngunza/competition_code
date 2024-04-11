@@ -42,7 +42,7 @@ class Player(BasePlayer):
     secuencia_numero_26 = models.IntegerField(label="¿Qué número continúa?", blank=True)
     secuencia_numero_29 = models.IntegerField(label="¿Qué número continúa?", blank=True)
     secuencia_numero_32 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_35 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_35 = models.StringField(label="¿Qué número continúa?", blank=True)
     secuencia_numero_38 = models.IntegerField(label="¿Qué número continúa?", blank=True)
 
     #Secuencias de letras
@@ -98,7 +98,7 @@ def set_payoffs(group: Group):
             player.correct_answers += 1
         if player.field_maybe_none('secuencia_numero_32') == 44:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_35') == -1:
+        if player.field_maybe_none('secuencia_numero_35') == "-1":
             player.correct_answers += 1
         if player.field_maybe_none('secuencia_numero_38') == 7:
             player.correct_answers += 1

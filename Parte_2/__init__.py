@@ -30,7 +30,7 @@ class Player(BasePlayer):
     pregunta_40 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
 
     #Secuencias numéricas
-    secuencia_numero_1 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_1 = models.StringField(label="¿Qué número continúa?", blank=True)
     secuencia_numero_4 = models.IntegerField(label="¿Qué número continúa?", blank=True)
     secuencia_numero_7 = models.IntegerField(label="¿Qué número continúa?", blank=True)
     secuencia_numero_10 = models.IntegerField(label="¿Qué número continúa?", blank=True)    
@@ -75,7 +75,7 @@ def set_payoffs(group: Group):
             player.correct_answers += 1
         if player.field_maybe_none('pregunta_40') == "6":
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_1') == -5:
+        if player.field_maybe_none('secuencia_numero_1') == "-5":
             player.correct_answers += 1
         if player.field_maybe_none('secuencia_numero_4') == 11:
             player.correct_answers += 1
