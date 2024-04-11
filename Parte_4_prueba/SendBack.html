@@ -1,0 +1,15 @@
+{{ block title }}Your Choice{{ endblock }}
+{{ block content }}
+    <p>
+        You are {{C.SM_ROLE}}.
+        {{C.FM_ROLE}} sent you {{ group.sent_amount }} and you received {{ tripled_amount }}.
+        Now you have {{ tripled_amount }}.
+        How much will you send to {{C.FM_ROLE}}?
+    </p>
+
+
+    {{ formfields }}
+    <p>{{ next_button }}</p>
+    {{ include_sibling 'instructions.html' }}
+
+{{ endblock }}

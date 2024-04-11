@@ -1,0 +1,244 @@
+{% block title  %}
+Parte 1
+{% endblock %}
+
+{% block content  %}
+<p>
+    <li>
+        Marque con un check en la columna 1 a la altura de cada seguro de incendios o de accidentes desde 1500 a 4000 soles, contratado entre el 15 de marzo de 1975 y el 10 de mayo de 1976.
+    </li>
+</p>
+<p>
+    <li>
+        Marque con un check en la columna 2 a la altura de cada seguro de vida o de accidentes, hasta 3000 soles, contratado entre el 15 de octubre de 1975 y el 20 de agosto de 1976.
+    </li>
+</p>
+<p>
+    <li>
+        Marque con un check en la columna 3 a la altura de cada seguro de incendios o de vida, desde 2000 a 5000 soles, contratado entre el 10 de febrero de 1975 y el 15 de junio de 1976. 
+    </li>
+</p>
+
+<style>
+    table, th, td{
+    border:1px solid black;
+}
+</style>
+<body>
+
+<center>
+    <table>
+        <tr>
+            <th>CANTIDAD ASEGURADA</th>
+            <th>CLASE DE SEGURO</th>
+            <th>FECHA</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+        <tr>
+            <td>3000 soles</td>
+            <td>INCENDIOS</td>
+            <td>2 DE ENERO 1976</td>
+            <td>{{ form.columna_1 }}</td>
+            <td>{{ form.columna_2 }}</td>
+            <td>{{ form.columna_3 }}</td>
+        </tr>
+        <tr>
+            <td>1000 soles</td>
+            <td>VIDA</td>
+            <td>22 DE OCTUBRE 1975</td>
+            <td>{{ form.columna_4 }}</td>
+            <td>{{ form.columna_5 }}</td>
+            <td>{{ form.columna_6 }}</td>
+        </tr>
+        <tr>
+            <td>4000 soles</td>
+            <td>ACCIDENTES</td>
+            <td>14 DE SETIEMBRE 1975</td>
+            <td>{{ form.columna_7 }}</td>
+            <td>{{ form.columna_8 }}</td>
+            <td>{{ form.columna_9 }}</td>
+        </tr>
+        <tr>
+            <td>2000 soles</td>
+            <td>VIDA</td>
+            <td>13 DE NOVIEMBRE 1976</td>
+            <td>{{ form.columna_10 }}</td>
+            <td>{{ form.columna_11 }}</td>
+            <td>{{ form.columna_12 }}</td>
+        </tr>
+        <tr>
+            <td>4000 soles</td>
+            <td>INCENDIOS</td>
+            <td>17 DE MAYO 1976</td>
+            <td>{{ form.columna_13 }}</td>
+            <td>{{ form.columna_14 }}</td>
+            <td>{{ form.columna_15 }}</td>
+        </tr>
+        <tr>
+            <td>3000 soles</td>
+            <td>ACCIDENTES</td>
+            <td>12 DE OCTUBRE 1975</td>
+            <td>{{ form.columna_16 }}</td>
+            <td>{{ form.columna_17 }}</td>
+            <td>{{ form.columna_18 }}</td>
+        </tr>
+        <tr>
+            <td>5000 soles</td>
+            <td>VIDA</td>
+            <td>16 DE FEBRERO 1976</td>
+            <td>{{ form.columna_19 }}</td>
+            <td>{{ form.columna_20 }}</td>
+            <td>{{ form.columna_21 }}</td>
+        </tr>
+        <tr>
+            <td>1000 soles</td>
+            <td>INCENDIOS</td>
+            <td>3 DE AGOSTO 1976</td>
+            <td>{{ form.columna_22 }}</td>
+            <td>{{ form.columna_23 }}</td>
+            <td>{{ form.columna_24 }}</td>
+        </tr>
+        <tr>
+            <td>4000 soles</td>
+            <td>INCENDIOS</td>
+            <td>11 DE AGOSTO 1976</td>
+            <td>{{ form.columna_25 }}</td>
+            <td>{{ form.columna_26 }}</td>
+            <td>{{ form.columna_27 }}</td>
+        </tr>
+        <tr>
+            <td>2000 soles</td>
+            <td>ACCIDENTES</td>
+            <td>21 DE MAYO 1975</td>
+            <td>{{ form.columna_28 }}</td>
+            <td>{{ form.columna_29 }}</td>
+            <td>{{ form.columna_30 }}</td>
+        </tr>
+        <tr>
+            <td>5000 soles</td>
+            <td>VIDA</td>
+            <td>9 DE MARZO 1975</td>
+            <td>{{ form.columna_31 }}</td>
+            <td>{{ form.columna_32 }}</td>
+            <td>{{ form.columna_33 }}</td>
+        </tr>
+        <tr>
+            <td>3000 soles</td>
+            <td>INCENDIOS</td>
+            <td>17 DE JULIO 1976</td>
+            <td>{{ form.columna_34 }}</td>
+            <td>{{ form.columna_35 }}</td>
+            <td>{{ form.columna_36 }}</td>
+        </tr>
+        <tr>
+            <td>1000 soles</td>
+            <td>ACCIDENTES</td>
+            <td>4 DE JUNIO 1976</td>
+            <td>{{ form.columna_37 }}</td>
+            <td>{{ form.columna_38 }}</td>
+            <td>{{ form.columna_39 }}</td>
+        </tr>
+        <tr>
+            <td>1000 soles</td>
+            <td>VIDA</td>
+            <td>23 DE NOVIEMBRE 1976</td>
+            <td>{{ form.columna_40 }}</td>
+            <td>{{ form.columna_41 }}</td>
+            <td>{{ form.columna_42 }}</td>
+        </tr>
+        <tr>
+            <td>5000 soles</td>
+            <td>VIDA</td>
+            <td>18 DE ABRIL 1975</td>
+            <td>{{ form.columna_43 }}</td>
+            <td>{{ form.columna_44 }}</td>
+            <td>{{ form.columna_45 }}</td>
+        </tr>
+        <tr>
+            <td>2000 soles</td>
+            <td>ACCIDENTES</td>
+            <td>24 DE DICIEMBRE 1976</td>
+            <td>{{ form.columna_46 }}</td>
+            <td>{{ form.columna_47 }}</td>
+            <td>{{ form.columna_48 }}</td>
+        </tr>
+        <tr>
+            <td>5000 soles</td>
+            <td>ACCIDENTES</td>
+            <td>19 DE ABRIL 1975</td>
+            <td>{{ form.columna_49 }}</td>
+            <td>{{ form.columna_50 }}</td>
+            <td>{{ form.columna_51 }}</td>
+        </tr>
+        <tr>
+            <td>2000 soles</td>
+            <td>VIDA</td>
+            <td>7 DE DICIEMBRE 1976</td>
+            <td>{{ form.columna_52 }}</td>
+            <td>{{ form.columna_53 }}</td>
+            <td>{{ form.columna_54 }}</td>
+        </tr>
+        <tr>
+            <td>4000 soles</td>
+            <td>INCENDIOS</td>
+            <td>26 DE MAYO 1975</td>
+            <td>{{ form.columna_55 }}</td>
+            <td>{{ form.columna_56 }}</td>
+            <td>{{ form.columna_57 }}</td>
+        </tr>
+        <tr>
+            <td>3000 soles</td>
+            <td>ACCIDENTES</td>
+            <td>6 DE ENERO 1976</td>
+            <td>{{ form.columna_58 }}</td>
+            <td>{{ form.columna_59 }}</td>
+            <td>{{ form.columna_60 }}</td>
+        </tr>
+        <tr>
+            <td>5000 soles</td>
+            <td>VIDA</td>
+            <td>29 DE MARZO 1975</td>
+            <td>{{ form.columna_61 }}</td>
+            <td>{{ form.columna_62 }}</td>
+            <td>{{ form.columna_63 }}</td>
+        </tr>
+        <tr>
+            <td>3000 soles</td>
+            <td>VIDA</td>
+            <td>28 DE JUNIO 1975</td>
+            <td>{{ form.columna_64 }}</td>
+            <td>{{ form.columna_65 }}</td>
+            <td>{{ form.columna_66 }}</td>
+        </tr>
+        <tr>
+            <td>4000 soles</td>
+            <td>ACCIDENTES</td>
+            <td>8 DE FEBRERO 1976</td>
+            <td>{{ form.columna_67 }}</td>
+            <td>{{ form.columna_68 }}</td>
+            <td>{{ form.columna_69 }}</td>
+        </tr>
+        <tr>
+            <td>1000 soles</td>
+            <td>INCENDIOS</td>
+            <td>27 DE JULIO 1975</td>
+            <td>{{ form.columna_70 }}</td>
+            <td>{{ form.columna_71 }}</td>
+            <td>{{ form.columna_72 }}</td>
+        </tr>
+        <tr>
+            <td>2000 soles</td>
+            <td>ACCIDENTES</td>
+            <td>21 DE ENERO 1976</td>
+            <td>{{ form.columna_73 }}</td>
+            <td>{{ form.columna_74 }}</td>
+            <td>{{ form.columna_75 }}</td>
+        </tr> -->
+    </table>
+</center>
+
+{% next_button %}
+{% endblock %}
+

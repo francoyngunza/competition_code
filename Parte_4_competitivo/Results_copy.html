@@ -1,0 +1,18 @@
+{{ block title }}Resultados {{ endblock }}
+{{ block content }}
+
+
+{{ if player.is_winner == True }}
+    <p>
+        <p>Tu número de respuestas correctas es de {{ rpta }}, tú fuiste el que tuvo más respuestas correctas en tu grupo. Por lo tanto, tu pago es de {{ player.payoff }}.</p>
+    </p>
+{{ else }}
+    <p>
+        <p>Tu número de respuestas correctas es de {{ rpta }}. Otro jugador de tu grupo obtuvo más respuestas correctas; por lo tanto, tu pago es de {{ player.payoff }}.</p>
+    </p>
+{{ endif }}
+
+<p>{{ next_button }}</p>
+
+
+{{ endblock }}
