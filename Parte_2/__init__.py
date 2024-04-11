@@ -139,7 +139,7 @@ class Introduction(Page):
         import time
 
         # remember to add 'expiry' to PARTICIPANT_FIELDS.
-        participant.expiry = time.time() + 1*60
+        participant.expiry = time.time() + 5*60
 
 class Pregunta_3(Page):
     form_model = "player"
