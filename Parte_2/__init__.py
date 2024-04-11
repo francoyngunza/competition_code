@@ -20,40 +20,40 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     correct_answers = models.IntegerField(initial=0)
 
-    pregunta_3 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"])
-    pregunta_6 = models.StringField(label="¿Cuál figura completa lógicamente la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"])
-    pregunta_14 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"])
-    pregunta_28 = models.StringField(label="Determina que número debe reemplazar el signo de interrogación:")
-    pregunta_31 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"])
-    pregunta_34 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"])
-    pregunta_37 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"])
-    pregunta_40 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"])
+    pregunta_3 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"], blank=True)
+    pregunta_6 = models.StringField(label="¿Cuál figura completa lógicamente la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
+    pregunta_14 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"], blank=True)
+    pregunta_28 = models.IntegerField(label="Determina que número debe reemplazar el signo de interrogación:", null=True)
+    pregunta_31 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"], blank=True)
+    pregunta_34 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
+    pregunta_37 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
+    pregunta_40 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
 
     #Secuencias numéricas
-    secuencia_numero_1 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_4 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_7 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_10 = models.StringField(label="¿Qué número continúa?")    
-    secuencia_numero_13 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_16 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_19 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_22 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_25 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_28 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_31 = models.StringField(label="¿Qué número continúa?")    
-    secuencia_numero_34 = models.StringField(label="¿Qué número continúa?")
-    secuencia_numero_37 = models.StringField(label="¿Qué número continúa?")
+    secuencia_numero_1 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_4 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_7 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_10 = models.IntegerField(label="¿Qué número continúa?", null=True)    
+    secuencia_numero_13 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_16 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_19 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_22 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_25 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_28 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_31 = models.IntegerField(label="¿Qué número continúa?", null=True)    
+    secuencia_numero_34 = models.IntegerField(label="¿Qué número continúa?", null=True)
+    secuencia_numero_37 = models.IntegerField(label="¿Qué número continúa?", null=True)
 
     #Secuencias de letras
-    secuencia_letra_1 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
-    secuencia_letra_4 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
-    secuencia_letra_7 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
-    secuencia_letra_10 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
-    secuencia_letra_13 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
-    secuencia_letra_16 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
-    secuencia_letra_19 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
-    secuencia_letra_22 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
-    secuencia_letra_25 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?')
+    secuencia_letra_1 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_4 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_7 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_10 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_13 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_16 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_19 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_22 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_25 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
 
     
 def set_payoffs(group: Group):
@@ -65,7 +65,7 @@ def set_payoffs(group: Group):
             player.correct_answers += 1   
         if player.field_maybe_none('pregunta_14') == '8':
             player.correct_answers += 1
-        if player.field_maybe_none('pregunta_28') == '3':
+        if player.field_maybe_none('pregunta_28') == 3:
             player.correct_answers += 1  
         if player.field_maybe_none('pregunta_31') == "2":
             player.correct_answers += 1
@@ -75,31 +75,31 @@ def set_payoffs(group: Group):
             player.correct_answers += 1
         if player.field_maybe_none('pregunta_40') == "6":
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_1') == '-5':
+        if player.field_maybe_none('secuencia_numero_1') == -5:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_4') == '11':
+        if player.field_maybe_none('secuencia_numero_4') == 11:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_7') == '174':
+        if player.field_maybe_none('secuencia_numero_7') == 174:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_10') == '16':
+        if player.field_maybe_none('secuencia_numero_10') == 16:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_13') == '30':
+        if player.field_maybe_none('secuencia_numero_13') == 30:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_16') == '4':
+        if player.field_maybe_none('secuencia_numero_16') == 4:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_19') == '741':
+        if player.field_maybe_none('secuencia_numero_19') == 741:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_22') == '50':
+        if player.field_maybe_none('secuencia_numero_22') == 50:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_25') == '38':
+        if player.field_maybe_none('secuencia_numero_25') == 38:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_28') == '41':
+        if player.field_maybe_none('secuencia_numero_28') == 41:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_31')== '1024':
+        if player.field_maybe_none('secuencia_numero_31')== 1024:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_34') == '37':
+        if player.field_maybe_none('secuencia_numero_34') == 37:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_37') == '1003':
+        if player.field_maybe_none('secuencia_numero_37') == 1003:
             player.correct_answers += 1
         if player.field_maybe_none('secuencia_letra_1') == 'M':
             player.correct_answers += 1
