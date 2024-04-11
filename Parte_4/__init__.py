@@ -344,6 +344,10 @@ class Pregunta_5(Page):
     form_fields = ["pregunta_5"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
    
 class Pregunta_8(Page):
     form_model = "player"
@@ -351,11 +355,19 @@ class Pregunta_8(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class Pregunta_16(Page):
     form_model = "player"
     form_fields = ["pregunta_16"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class Pregunta_30(Page):
     form_model = "player"
@@ -363,11 +375,19 @@ class Pregunta_30(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class Pregunta_33(Page):
     form_model = "player"
     form_fields = ["pregunta_33"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class Pregunta_36(Page):
     form_model = "player"
@@ -375,11 +395,19 @@ class Pregunta_36(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+    
 class Pregunta_39(Page):
     form_model = "player"
     form_fields = ["pregunta_39"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 
 class secuencia_numero_3(Page):
@@ -388,11 +416,19 @@ class secuencia_numero_3(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_numero_6(Page):
     form_model = "player"
     form_fields = ["secuencia_numero_6"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_numero_9(Page):
     form_model = "player"
@@ -400,11 +436,19 @@ class secuencia_numero_9(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_numero_12(Page):
     form_model = "player"
     form_fields = ["secuencia_numero_12"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_numero_15(Page):
     form_model = "player"
@@ -412,11 +456,19 @@ class secuencia_numero_15(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_numero_18(Page):
     form_model = "player"
     form_fields = ["secuencia_numero_18"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_numero_21(Page):
     form_model = "player"
@@ -424,11 +476,19 @@ class secuencia_numero_21(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_numero_24(Page):
     form_model = "player"
     form_fields = ["secuencia_numero_24"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_numero_27(Page):
     form_model = "player"
@@ -436,11 +496,19 @@ class secuencia_numero_27(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_numero_30(Page):
     form_model = "player"
     form_fields = ["secuencia_numero_30"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_numero_33(Page):
     form_model = "player"
@@ -448,11 +516,19 @@ class secuencia_numero_33(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_numero_36(Page):
     form_model = "player"
     form_fields = ["secuencia_numero_36"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_numero_39(Page):
     form_model = "player"
@@ -460,11 +536,19 @@ class secuencia_numero_39(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+    
 class secuencia_numero_40(Page):
     form_model = "player"
     form_fields = ["secuencia_numero_40"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_letra_3(Page):
     form_model = "player"
@@ -472,11 +556,19 @@ class secuencia_letra_3(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_letra_6(Page):
     form_model = "player"
     form_fields = ["secuencia_letra_6"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_letra_9(Page):
     form_model = "player"
@@ -484,11 +576,19 @@ class secuencia_letra_9(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_letra_12(Page):
     form_model = "player"
     form_fields = ["secuencia_letra_12"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_letra_15(Page):
     form_model = "player"
@@ -496,11 +596,19 @@ class secuencia_letra_15(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_letra_18(Page):
     form_model = "player"
     form_fields = ["secuencia_letra_18"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class secuencia_letra_21(Page):
     form_model = "player"
@@ -508,17 +616,29 @@ class secuencia_letra_21(Page):
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_letra_24(Page):
     form_model = "player"
     form_fields = ["secuencia_letra_24"]
 
     get_timeout_seconds = get_timeout_seconds
 
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
 class secuencia_letra_27(Page):
     form_model = "player"
     form_fields = ["secuencia_letra_27"]
 
     get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
 
 class ResultsWaitPage(WaitPage):
     after_all_players_arrive = set_payoffs
