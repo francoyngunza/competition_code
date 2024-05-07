@@ -1,0 +1,31 @@
+{% load otree static %}
+
+{% block title %}
+    Parte 1
+{% endblock %}
+
+{% block content %}
+
+    <h4>
+        Instrucciones
+    </h4>
+
+    <p>
+        A continuación, se le presentarán varias preguntas de manera sucesiva y deberá elegir cuál de las dos opciones prefiere. No hay respuestas correctas o incorrectas. 
+    </p>    
+    <p>
+        Usaremos un deslizador (slider) para facilitar sus elecciones. 
+        Una vez que usted escoja su plan preferido en todas las preguntas, se elegirá una de las preguntas al azar y se le pagará de acuerdo con su elección en esa situación específica.
+    </p>
+
+    <div class="card bg-light" style = "padding: 20px;">
+        <strong>
+            En esta parte del experimento cada moneda experimental equivale a {{ Constants.valor_moneda_exp }} soles. 
+        </strong>
+    </div>
+
+    <br>
+
+    {% next_button %}
+
+{% endblock %}

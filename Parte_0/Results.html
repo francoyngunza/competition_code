@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Resultados
+{% endblock %}
+
+{% block content %}
+    <p>
+    <table class="table" style="width:500px; margin-top:20px;">
+
+    <tr><td>Pregunta elegida para el pago:</td><td>&nbsp;&nbsp;{{ player.random_lottery }}</td></tr>
+
+    <tr><td>Plan pagado:</td><td>&nbsp;&nbsp;{{ player.selected_lottery }}</td></tr>
+
+    <tr><td>Monto obtenido:</td><td>&nbsp;&nbsp;{{ player.monedas_experimentales }} monedas experimentales</td></tr>
+
+    <tr><td>Monto obtenido en Soles:</td><td>&nbsp;&nbsp;{{ player.payoff }} soles</td></tr>
+
+    </table>
+
+    </p>
+    {% next_button %}
+{% endblock %}
+
+

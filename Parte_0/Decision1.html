@@ -1,0 +1,349 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Serie 1
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;
+}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top;text-align: center;}
+.tg .tg-g1fv{background-color:#333333;color:#ffffff;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0449{background-color:#333333;color:#ffffff;border-color:inherit;text-align:center;vertical-align:top;}
+.tg .tg-fymr{font-weight:bold;border-color:inherit;text-align:left;vertical-align:top;text-align: center;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top;
+text-align: center;}
+.tg .tg-0lax{text-align:left;vertical-align:top;text-align: center;}
+
+.bolilla{
+  background-color:#fff;
+    border: 1px solid black;    
+    height:15px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:15px;
+    display: inline-block;
+    font-size: 10px;
+    text-align: center;
+}
+</style>
+
+<table class="tg" width = 980>
+  <tr>
+    <th class="tg-g1fv">Pregunta</th>
+    <th class="tg-0449" colspan="1">Plan A</th>
+    <th class="tg-0449" colspan="1">Plan B</th>
+  </tr>
+  <tr>
+    <td class="tg-fymr">1</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 10 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">2</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 12 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">3</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 14 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">4</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 16 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">5</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 18 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">6</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 20 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">7</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 22 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">8</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 24 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">9</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 26 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">10</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 28 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">11</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 30 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">12</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 32 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">13</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 34 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">14</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 36 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">15</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 38 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">16</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 40 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">17</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 42 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">18</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 44 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">19</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 46 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">20</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 48 monedas experimentales.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">21</td>
+    <td class="tg-0pky" style = "text-align: center;">
+      Lotería: con 50% de probabilidad ganas 100 monedas experimentales, y con 50% de probabilidad no ganas nada.
+    </td>
+    <td class="tg-0pky" >
+      Recibes un pago seguro de 50 monedas experimentales.
+    </td>
+  </tr>
+</table>
+
+<br>
+{{ formfield_errors 'first_choice_1' }}
+<p><b>Importante:</b> para poder mover el deslizador haga click sobre él</p>
+
+<label for="slider" class="form-label">Mueva el deslizador para escoger el número de preguntas para el <strong>plan A</strong> y para el <strong>plan B</strong></label>
+
+<p></p>
+
+<div>
+  <input type="range" style='width:500px;' id="slider" min = '0' step = '1' max = '21' oninput="{
+  choice_A.innerText = (this.value != '0') ? parseInt(this.value) : 'Ninguna';
+  choice_B.innerText = (parseInt(this.value)+1 != 15) ? parseInt(this.value)+1 : 'Ninguna';
+  sombrear()}" disabled>
+</div>
+
+<p></p>
+<label>Escojo el <strong>plan A</strong> desde la pregunta 1 hasta la pregunta:</label>
+<label><strong id = 'choice_A'></strong></label>
+<label> y Escojo el <strong>plan B</strong> desde la pregunta:</label>
+<label><strong id = 'choice_B'></strong></label>
+  
+<p></p>
+
+<input name = 'first_choice_1' id = 'first_choice_1' hidden>
+<input name = 'second_choice_1' id = 'second_choice_1' hidden>
+
+<button id = "boton" type = "button" class="otree-btn-next btn btn-primary" onclick="validate()">Siguiente</button>
+
+<script> 
+
+  function validate(){
+    if (confirm("¿Está seguro de su decisión?")) {
+      console.log("submitea");
+      document.forms["form"].submit()
+
+    } else {
+      console.log("You pressed Cancel!");
+    }
+  }
+
+
+  $("#slider").closest("div").click(function(){
+    $(this).find("input:disabled").attr("disabled", false);
+  })
+
+  function sombrear()
+  {
+    const selected_value_A = document.getElementById('slider').value;
+
+    console.log(selected_value_A.value)
+ 
+    document.getElementById('first_choice_1').value = parseInt(selected_value_A);
+    paint(1,selected_value_A,'rgb(250, 243, 201)','A')
+  
+    document.getElementById('second_choice_1').value = parseInt(selected_value_A) + 1 == 22? 0 : parseInt(selected_value_A) + 1;
+    paint(parseInt(selected_value_A)+1,21,'rgb(250, 243, 201)','B')
+    
+  }
+
+  // orange: 'rgb(250, 223, 174)'
+  function paint(start,end,color,lottery)
+  {
+
+    let table = document.getElementsByTagName('table')[0];
+    let list_td = table.getElementsByTagName('tr');
+    //cleaning the color
+
+    if (lottery == 'A')
+    {
+      for (let td = 1; td < list_td.length; td ++)
+      {
+        let first = list_td[td].getElementsByTagName('td')[1];
+
+
+        first.style.backgroundColor = "white";
+
+      }
+      
+      // assigning the color
+      for (let td = start ; td <= end; td ++ )
+      {
+        let first = list_td[td].getElementsByTagName('td')[1];
+
+
+        first.style.backgroundColor = color;
+
+        
+      }
+    }else
+    {
+      for (let td = 1; td < list_td.length; td ++)
+      {
+        let first = list_td[td].getElementsByTagName('td')[2];
+
+
+        first.style.backgroundColor = "white";
+      }
+      
+      // assigning the color
+      for (let td = start ; td <= end; td ++ )
+      {
+        let first = list_td[td].getElementsByTagName('td')[2];
+
+
+        first.style.backgroundColor = color;
+
+        
+      }
+    }
+  }
+
+
+  
+</script>
+
+{% endblock %}

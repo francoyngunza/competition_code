@@ -5,8 +5,14 @@ SESSION_CONFIGS = [
     dict(
         name='exp_competencia',
         display_name="Competencia",
-        app_sequence=['survey','Asignacion_Primera_Parte','Parte_1_Control','Parte_1_Tratamiento','Parte_2','Parte_3','Parte_4'],
+        app_sequence=['Parte_0','survey','Asignacion_Primera_Parte','Parte_1_Control','Parte_1_Tratamiento','Parte_2','Parte_3','Parte_4'],
         num_demo_participants=8,
+    ),
+    dict(
+        name='tanaka',
+        display_name="measure_task",
+        app_sequence=['Parte_0'],
+        num_demo_participants=2,
     ),
 ]
 
@@ -16,7 +22,7 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=1, participation_fee=0.00, doc=""
+    real_world_currency_per_point=1, participation_fee=5.00, doc=""
 )
 
 PARTICIPANT_FIELDS = ['expiry']
