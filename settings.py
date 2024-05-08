@@ -5,7 +5,7 @@ SESSION_CONFIGS = [
     dict(
         name='exp_competencia',
         display_name="Competencia",
-        app_sequence=['Parte_0','survey','Asignacion_Primera_Parte','Parte_1_Control','Parte_1_Tratamiento','Parte_2','Parte_3','Parte_4'],
+        app_sequence=['survey','Parte_0','Asignacion_Primera_Parte','Parte_1_Control','Parte_1_Tratamiento','Parte_2','Parte_3','Parte_4'],
         num_demo_participants=8,
     ),
     dict(

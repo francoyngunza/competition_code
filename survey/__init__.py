@@ -17,6 +17,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     age = models.IntegerField(label='Edad', min=18, max=100)
+
     gender = models.StringField(
         choices=[['H', 'Hombre'], ['F','Mujer']],
         label='Sexo',
@@ -41,9 +42,9 @@ class Player(BasePlayer):
     #     label='¿Estás trabajando?',
     #     widget=widgets.RadioSelect,
     # )
-    universidad = models.StringField(
-        choices=[['up', 'Universidad del Pacífico'], ['udep', 'Universidad de Lima'], ['pucp','PUCP'], ['upc', 'UPC'], ['otro','Otros']],
-        label='¿En que universidad estudias?',
+    ciclo = models.StringField(
+        choices=[['1', 'Primer'], ['2', 'Segundo'], ['3','Tercero'], ['4', 'Cuarto'], ['5', 'Quinto'], ['6', 'Sexto'], ['7','Sétimo'], ['8', 'Octavo'], ['9','Noveno'], ['10', 'Décimo']],
+        label='¿En que ciclo te encuentras actualmente?',
         widget=widgets.RadioSelect,
     )
 
@@ -53,7 +54,7 @@ class Player(BasePlayer):
 # PAGES
 class Demographics(Page):
     form_model = 'player'
-    form_fields = ['age', 'gender', 'carrera', 'distrito','universidad']
+    form_fields = ['age', 'gender', 'carrera', 'distrito','ciclo']
 
 
 

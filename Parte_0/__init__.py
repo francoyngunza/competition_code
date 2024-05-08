@@ -15,33 +15,22 @@ class Constants(BaseConstants):
     num_rounds = 1
     num_breaks = 3
     instructions_template = "measure_task/Instructions.html"
-    choices_series1 = [[1,'1'], [2,'2'], [3,'3'], [4,'4'], [5,'5'], [6,'6'], [7,'7'], [8,'8'], [9,'9'], [10,'10'], [11,'11'], [12,'12'], [13,'13'], [14,'14'], [15,'15'], [16,'16'], [17,'17'], [18,'18'], [19,'19'], [20,'20'], [21,'21'], [0 ,'Ninguna']]
-    valor_moneda_exp = 0.05
+    choices_series1 = [[1,'1'], [2,'2'], [3,'3'], [4,'4'], [5,'5'], [6,'6'], [7,'7'], [8,'8'], [9,'9'], [10,'10'], [11,'11'], [0 ,'Ninguna']]
+    valor_moneda_exp = 0.02
 
     lotteries = [
     [
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 50},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 48},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 46},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 44},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 42},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 40},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 38},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 36},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 34},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 32},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 30},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 28},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 26},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 24},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 22},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 20},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 18},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 16},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 14},
-        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 12},
         {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 10},
-
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 14},
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 18},
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 22},
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 26},
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 30},
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 34},
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 38},
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 42},
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 46},
+        {"high_paym_A": 100, "low_paym_A": 0, "unico_paym_B": 50},
     ]
 ]
 
@@ -65,7 +54,7 @@ class Player(BasePlayer):
 
     def set_payoffs(self):
         self.random_draw = r.randrange(1, 11)
-        self.random_lottery = r.randrange(1, 22)
+        self.random_lottery = r.randrange(1, 12)
         choices_aux_1 = 0
 
         if self.first_choice_1 != 0:
@@ -104,17 +93,6 @@ class Example1(Page):
     pass
 
 
-class Example2(Page):
-    pass
-
-
-class Example3(Page):
-    pass
-
-
-class Example4(Page):
-    pass
-
 class Decision1(Page):
     form_model = 'player'
     form_fields = ['first_choice_1', 'second_choice_1']
@@ -139,6 +117,6 @@ class Results_copy(Page):
 
 page_sequence = [
     Introduction, 
-    #Example1, 
+    Example1, 
     Decision1, 
     Results]
