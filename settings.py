@@ -1,17 +1,23 @@
 from os import environ
 
+SESSION_CONFIG_DEFAULTS = dict(
+    real_world_currency_per_point=1, participation_fee=5.00, doc=""
+)
+
+PARTICIPANT_FIELDS = ['expiry']
 
 SESSION_CONFIGS = [
     dict(
         name='exp_competencia',
         display_name="Competencia",
-        app_sequence=['survey','Parte_0','Asignacion_Primera_Parte','Parte_1_Control','Parte_1_Tratamiento','Parte_2','Parte_3','Parte_4'],
-        num_demo_participants=8,
+        participant_fee = SESSION_CONFIG_DEFAULTS["participation_fee"],
+        app_sequence=['survey','Parte_1','Asignacion_Primera_Parte','Parte_2_Control','Parte_2_Tratamiento','Parte_3','Parte_4','Parte_5','payment_info'],
+        num_demo_participants=4,
     ),
     dict(
         name='tanaka',
         display_name="measure_task",
-        app_sequence=['Parte_0'],
+        app_sequence=['Parte_1'],
         num_demo_participants=2,
     ),
 ]
@@ -21,11 +27,6 @@ SESSION_CONFIGS = [
 # the session config can be accessed from methods in your apps as self.session.config,
 # e.g. self.session.config['participation_fee']
 
-SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=1, participation_fee=5.00, doc=""
-)
-
-PARTICIPANT_FIELDS = ['expiry']
 SESSION_FIELDS = []
 
 # ISO-639 code

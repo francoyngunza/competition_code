@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Pagos
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        <strong>Su pago es el siguiente: </strong> <strong>{{ participant.payoff_plus_participation_fee() }}</strong> el cual incluye <strong>5 soles</strong> de pago por participaición.
+    </p>
+    <p>
+        Para proceder con tu pago, entra al enlace de abajo. Este enlace te redigirá a un formulario para brindar la información para que recibas tu pago.
+        <a target="_blank" href="https://forms.gle/hVhY178eJwa6uY1A7">https://forms.gle/hVhY178eJwa6uY1A7</a>
+        
+        <br>¡Muchas gracias por tu participación!
+        <br>E2LabUP
+    </p>
+
+
+{% endblock %}

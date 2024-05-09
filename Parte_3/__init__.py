@@ -3,146 +3,134 @@ from otree.api import *
 import re
 
 
+
 class C(BaseConstants):
-    NAME_IN_URL = 'Parte_3'
-    PLAYERS_PER_GROUP = 4
+    NAME_IN_URL = 'parte_3'
+    PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
-    multiplicador = 0.05
+    multiplicador = 5
 
 class Subsession(BaseSubsession):
     pass
 
 class Group(BaseGroup):
-    max_correct_answers = models.StringField()
-    num_winners = models.StringField()
+    pass
 
 
 class Player(BasePlayer):
-    is_winner = models.BooleanField(initial=False)
     correct_answers = models.IntegerField(initial=0)
 
-    pregunta_4 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"], blank=True)
-    pregunta_7 = models.IntegerField(label="Determina que número debe reemplazar el signo de interrogación:", blank=True)
-    pregunta_15 = models.StringField(label="Selecciona la figura que mejor completa la analogía", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
-    pregunta_29 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"], blank=True)
-    pregunta_32 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"], blank=True)
-    pregunta_35 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
-    pregunta_38 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
-    pregunta_41 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
+    pregunta_3 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"], blank=True)
+    pregunta_6 = models.StringField(label="¿Cuál figura completa lógicamente la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
+    pregunta_14 = models.StringField(label="Identifica el elemento que falta para completar el patrón", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6", "7", "8"], blank=True)
+    pregunta_28 = models.IntegerField(label="Determina que número debe reemplazar el signo de interrogación:", blank=True)
+    pregunta_31 = models.StringField(label="¿Qué figura completa la serie?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4"], blank=True)
+    pregunta_34 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
+    pregunta_37 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
+    pregunta_40 = models.StringField(label="¿Qué opción completa la serie correctamente?", widget=widgets.RadioSelectHorizontal, choices=["1", "2", "3", "4", "5", "6"], blank=True)
 
     #Secuencias numéricas
-    secuencia_numero_2 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_5 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_8 = models.IntegerField(label="¿Qué número continúa?", blank=True)  
-    secuencia_numero_11 = models.StringField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_14 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_17 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_20 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_23 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_26 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_29 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_32 = models.IntegerField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_35 = models.StringField(label="¿Qué número continúa?", blank=True)
-    secuencia_numero_38 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_1 = models.StringField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_4 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_7 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_10 = models.IntegerField(label="¿Qué número continúa?", blank=True)    
+    secuencia_numero_13 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_16 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_19 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_22 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_25 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_28 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_31 = models.IntegerField(label="¿Qué número continúa?", blank=True)    
+    secuencia_numero_34 = models.IntegerField(label="¿Qué número continúa?", blank=True)
+    secuencia_numero_37 = models.IntegerField(label="¿Qué número continúa?", blank=True)
 
     #Secuencias de letras
-    secuencia_letra_2 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
-    secuencia_letra_5 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
-    secuencia_letra_8 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
-    secuencia_letra_11 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
-    secuencia_letra_14 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
-    secuencia_letra_17 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
-    secuencia_letra_20 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
-    secuencia_letra_23 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
-    secuencia_letra_26 = models.StringField(label='¿En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_1 = models.StringField(label='En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_4 = models.StringField(label='En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_7 = models.StringField(label='En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_10 = models.StringField(label='En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_13 = models.StringField(label='En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_16 = models.StringField(label='En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_19 = models.StringField(label='En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_22 = models.StringField(label='En la siguiente serie, ¿qué letra continúa?', blank=True)
+    secuencia_letra_25 = models.StringField(label='En la siguiente serie, ¿qué letra continúa?', blank=True)
 
-
+    
 def set_payoffs(group: Group):
     players = group.get_players()
     for player in players:
-        if player.field_maybe_none('pregunta_4') == '6':
+        if player.field_maybe_none('pregunta_3') == '7':
+            player.correct_answers += 1
+        if player.field_maybe_none('pregunta_6') == '1':
+            player.correct_answers += 1   
+        if player.field_maybe_none('pregunta_14') == '8':
+            player.correct_answers += 1
+        if player.field_maybe_none('pregunta_28') == 3:
             player.correct_answers += 1  
-        if player.field_maybe_none('pregunta_7') == 12:
+        if player.field_maybe_none('pregunta_31') == "2":
             player.correct_answers += 1
-        if player.field_maybe_none('pregunta_15') == '6':
-            player.correct_answers += 1
-        if player.field_maybe_none('pregunta_29') == '2':
-            player.correct_answers += 1
-        if player.field_maybe_none('pregunta_32') == '2':
+        if player.field_maybe_none('pregunta_34') == "5":
             player.correct_answers += 1     
-        if player.field_maybe_none('pregunta_35') == '4':
+        if player.field_maybe_none('pregunta_37') == "4":
             player.correct_answers += 1
-        if player.field_maybe_none('pregunta_38') == '5':
-            player.correct_answers += 1    
-        if player.field_maybe_none('pregunta_41') == '2':
+        if player.field_maybe_none('pregunta_40') == "6":
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_2') == 65:
+        if player.field_maybe_none('secuencia_numero_1') == "-5":
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_5') == 2520:
+        if player.field_maybe_none('secuencia_numero_4') == 11:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_8') == 8552:
+        if player.field_maybe_none('secuencia_numero_7') == 174:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_11') == '17/49':
+        if player.field_maybe_none('secuencia_numero_10') == 16:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_14') == 178:
+        if player.field_maybe_none('secuencia_numero_13') == 30:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_17') == 56:
+        if player.field_maybe_none('secuencia_numero_16') == 4:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_20') == 40:
+        if player.field_maybe_none('secuencia_numero_19') == 741:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_23') == 41:
+        if player.field_maybe_none('secuencia_numero_22') == 50:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_26') == 48:
+        if player.field_maybe_none('secuencia_numero_25') == 38:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_29') == 36:
+        if player.field_maybe_none('secuencia_numero_28') == 41:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_32') == 44:
+        if player.field_maybe_none('secuencia_numero_31')== 1024:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_35') == "-1":
+        if player.field_maybe_none('secuencia_numero_34') == 37:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_numero_38') == 7:
+        if player.field_maybe_none('secuencia_numero_37') == 1003:
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_letra_2') == 'N':
+        if player.field_maybe_none('secuencia_letra_1') == 'M':
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_letra_5') == 'G':
+        if player.field_maybe_none('secuencia_letra_4') == 'G':
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_letra_8') == 'S':
+        if player.field_maybe_none('secuencia_letra_7') == 'O':
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_letra_11') == 'b':
+        if player.field_maybe_none('secuencia_letra_10') == 'd':
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_letra_14') == 'n':
+        if player.field_maybe_none('secuencia_letra_13') == 'u':
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_letra_17') == 'l':
+        if player.field_maybe_none('secuencia_letra_16') == 'ñ' or player.field_maybe_none('secuencia_letra_16') == 'o':
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_letra_20') == 'T':
+        if player.field_maybe_none('secuencia_letra_19') == 'r':
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_letra_23') == 'Y':
+        if player.field_maybe_none('secuencia_letra_22') == 'B':
             player.correct_answers += 1
-        if player.field_maybe_none('secuencia_letra_26') == 'X':
+        if player.field_maybe_none('secuencia_letra_25') == 'K15':
             player.correct_answers += 1
-    winner = max(players, key=lambda player: player.correct_answers)
-    winner.is_winner = True
-        # Define los pagos
     for player in players:
-        if player.is_winner:
-            player.payoff = player.correct_answers*0.05*2
-        else:
-            player.payoff = 0
+            player.payoff = player.correct_answers*0.05
+
+    
+
 
 def get_timeout_seconds(player):
     participant = player.participant
     import time
     return participant.expiry - time.time()
-    
-#PAGES
-class ShuffleWaitPage(WaitPage):
 
-    wait_for_all_groups = True
-
-    @staticmethod
-    def after_all_players_arrive(subsession):
-        subsession.group_randomly()
-        subsession.session.vars['matching_matrix'] = subsession.get_group_matrix() 
+################################              PAGES            #################################
 
 class Introduction(Page):
 
@@ -154,9 +142,9 @@ class Introduction(Page):
         # remember to add 'expiry' to PARTICIPANT_FIELDS.
         participant.expiry = time.time() + 5*60
 
-class Pregunta_4(Page):
+class Pregunta_3(Page):
     form_model = "player"
-    form_fields = ["pregunta_4"]
+    form_fields = ["pregunta_3"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -164,9 +152,9 @@ class Pregunta_4(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class Pregunta_7(Page):
+class Pregunta_6(Page):
     form_model = "player"
-    form_fields = ["pregunta_7"]
+    form_fields = ["pregunta_6"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -174,9 +162,9 @@ class Pregunta_7(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class Pregunta_15(Page):
+class Pregunta_14(Page):
     form_model = "player"
-    form_fields = ["pregunta_15"]
+    form_fields = ["pregunta_14"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -184,119 +172,9 @@ class Pregunta_15(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class Pregunta_29(Page):
+class Pregunta_28(Page):
     form_model = "player"
-    form_fields = ["pregunta_29"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class Pregunta_32(Page):
-    form_model = "player"
-    form_fields = ["pregunta_32"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class Pregunta_35(Page):
-    form_model = "player"
-    form_fields = ["pregunta_35"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class Pregunta_38(Page):
-    form_model = "player"
-    form_fields = ["pregunta_38"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class Pregunta_41(Page):
-    form_model = "player"
-    form_fields = ["pregunta_41"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class secuencia_numero_2(Page):
-    form_model = "player"
-    form_fields = ["secuencia_numero_2"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class secuencia_numero_5(Page):
-    form_model = "player"
-    form_fields = ["secuencia_numero_5"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class secuencia_numero_8(Page):
-    form_model = "player"
-    form_fields = ["secuencia_numero_8"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class secuencia_numero_11(Page):
-    form_model = "player"
-    form_fields = ["secuencia_numero_11"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class secuencia_numero_14(Page):
-    form_model = "player"
-    form_fields = ["secuencia_numero_14"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class secuencia_numero_17(Page):
-    form_model = "player"
-    form_fields = ["secuencia_numero_17"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class secuencia_numero_20(Page):
-    form_model = "player"
-    form_fields = ["secuencia_numero_20"]
+    form_fields = ["pregunta_28"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -304,9 +182,10 @@ class secuencia_numero_20(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
     
-class secuencia_numero_23(Page):
+
+class Pregunta_31(Page):
     form_model = "player"
-    form_fields = ["secuencia_numero_23"]
+    form_fields = ["pregunta_31"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -314,9 +193,9 @@ class secuencia_numero_23(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_numero_26(Page):
+class Pregunta_34(Page):
     form_model = "player"
-    form_fields = ["secuencia_numero_26"]
+    form_fields = ["pregunta_34"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -324,9 +203,9 @@ class secuencia_numero_26(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_numero_29(Page):
+class Pregunta_37(Page):
     form_model = "player"
-    form_fields = ["secuencia_numero_29"]
+    form_fields = ["pregunta_37"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -334,9 +213,9 @@ class secuencia_numero_29(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_numero_32(Page):
+class Pregunta_40(Page):
     form_model = "player"
-    form_fields = ["secuencia_numero_32"]
+    form_fields = ["pregunta_40"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -344,9 +223,9 @@ class secuencia_numero_32(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_numero_35(Page):
+class secuencia_numero_1(Page):
     form_model = "player"
-    form_fields = ["secuencia_numero_35"]
+    form_fields = ["secuencia_numero_1"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -354,9 +233,9 @@ class secuencia_numero_35(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_numero_38(Page):
+class secuencia_numero_4(Page):
     form_model = "player"
-    form_fields = ["secuencia_numero_38"]
+    form_fields = ["secuencia_numero_4"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -364,9 +243,9 @@ class secuencia_numero_38(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_letra_2(Page):
+class secuencia_numero_7(Page):
     form_model = "player"
-    form_fields = ["secuencia_letra_2"]
+    form_fields = ["secuencia_numero_7"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -374,9 +253,9 @@ class secuencia_letra_2(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_letra_5(Page):
+class secuencia_numero_10(Page):
     form_model = "player"
-    form_fields = ["secuencia_letra_5"]
+    form_fields = ["secuencia_numero_10"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -384,9 +263,9 @@ class secuencia_letra_5(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_letra_8(Page):
+class secuencia_numero_13(Page):
     form_model = "player"
-    form_fields = ["secuencia_letra_8"]
+    form_fields = ["secuencia_numero_13"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -394,9 +273,9 @@ class secuencia_letra_8(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_letra_11(Page):
+class secuencia_numero_16(Page):
     form_model = "player"
-    form_fields = ["secuencia_letra_11"]
+    form_fields = ["secuencia_numero_16"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -404,19 +283,9 @@ class secuencia_letra_11(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_letra_14(Page):
+class secuencia_numero_19(Page):
     form_model = "player"
-    form_fields = ["secuencia_letra_14"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class secuencia_letra_17(Page):
-    form_model = "player"
-    form_fields = ["secuencia_letra_17"]
+    form_fields = ["secuencia_numero_19"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -424,20 +293,9 @@ class secuencia_letra_17(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
     
-class secuencia_letra_20(Page):
+class secuencia_numero_22(Page):
     form_model = "player"
-    form_fields = ["secuencia_letra_20"]
-
-    get_timeout_seconds = get_timeout_seconds
-
-
-    @staticmethod
-    def is_displayed(player):
-        return get_timeout_seconds(player) > 1
-
-class secuencia_letra_23(Page):
-    form_model = "player"
-    form_fields = ["secuencia_letra_23"]
+    form_fields = ["secuencia_numero_22"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -445,9 +303,140 @@ class secuencia_letra_23(Page):
     def is_displayed(player):
         return get_timeout_seconds(player) > 1
 
-class secuencia_letra_26(Page):
+class secuencia_numero_25(Page):
     form_model = "player"
-    form_fields = ["secuencia_letra_26"]
+    form_fields = ["secuencia_numero_25"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_numero_28(Page):
+    form_model = "player"
+    form_fields = ["secuencia_numero_28"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_numero_31(Page):
+    form_model = "player"
+    form_fields = ["secuencia_numero_31"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_numero_34(Page):
+    form_model = "player"
+    form_fields = ["secuencia_numero_34"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+    
+class secuencia_numero_37(Page):
+    form_model = "player"
+    form_fields = ["secuencia_numero_37"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+
+class secuencia_letra_1(Page):
+    form_model = "player"
+    form_fields = ["secuencia_letra_1"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_letra_4(Page):
+    form_model = "player"
+    form_fields = ["secuencia_letra_4"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_letra_7(Page):
+    form_model = "player"
+    form_fields = ["secuencia_letra_7"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_letra_10(Page):
+    form_model = "player"
+    form_fields = ["secuencia_letra_10"]
+
+    get_timeout_seconds = get_timeout_seconds    
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+    
+class secuencia_letra_13(Page):
+    form_model = "player"
+    form_fields = ["secuencia_letra_13"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_letra_16(Page):
+    form_model = "player"
+    form_fields = ["secuencia_letra_16"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_letra_19(Page):
+    form_model = "player"
+    form_fields = ["secuencia_letra_19"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_letra_22(Page):
+    form_model = "player"
+    form_fields = ["secuencia_letra_22"]
+
+    get_timeout_seconds = get_timeout_seconds
+
+    @staticmethod
+    def is_displayed(player):
+        return get_timeout_seconds(player) > 1
+
+class secuencia_letra_25(Page):
+    form_model = "player"
+    form_fields = ["secuencia_letra_25"]
 
     get_timeout_seconds = get_timeout_seconds
 
@@ -466,38 +455,37 @@ class Results_copy(Page):
 
 
 page_sequence = [
-    ShuffleWaitPage,
     Introduction,
-    Pregunta_4,
-    Pregunta_7,
-    Pregunta_15,
-    Pregunta_29,
-    Pregunta_32,
-    Pregunta_35,
-    Pregunta_38,
-    Pregunta_41,
-    secuencia_numero_2,
-    secuencia_numero_5,
-    secuencia_numero_8,
-    secuencia_numero_11,
-    secuencia_numero_14,
-    secuencia_numero_17,
-    secuencia_numero_20,
-    secuencia_numero_23,
-    secuencia_numero_26,
-    secuencia_numero_29,
-    secuencia_numero_32,
-    secuencia_numero_35,
-    secuencia_numero_38,
-    secuencia_letra_2,
-    secuencia_letra_5,
-    secuencia_letra_8,
-    secuencia_letra_11,
-    secuencia_letra_14,
-    secuencia_letra_17,
-    secuencia_letra_20,
-    secuencia_letra_23,
-    secuencia_letra_26,
+    Pregunta_3,
+    Pregunta_6,
+    Pregunta_14,
+    Pregunta_28,
+    Pregunta_31,
+    Pregunta_34,
+    Pregunta_37,
+    Pregunta_40,
+    secuencia_numero_1,
+    secuencia_numero_4,
+    secuencia_numero_7,
+    secuencia_numero_10,
+    secuencia_numero_13,
+    secuencia_numero_16,
+    secuencia_numero_19,
+    secuencia_numero_22,
+    secuencia_numero_25,
+    secuencia_numero_28,
+    secuencia_numero_31,
+    secuencia_numero_34,
+    secuencia_numero_37,
+    secuencia_letra_1,
+    secuencia_letra_4,
+    secuencia_letra_7,
+    secuencia_letra_10,
+    secuencia_letra_13,
+    secuencia_letra_16,
+    secuencia_letra_19,
+    secuencia_letra_22,
+    secuencia_letra_25,
     ResultsWaitPage,
     Results_copy,
     #FinalResults,

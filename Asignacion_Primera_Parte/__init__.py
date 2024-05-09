@@ -22,9 +22,9 @@ class MyWaitPage(WaitPage):
     def app_after_this_page(player, upcoming_apps):
         print('upcoming_apps is', upcoming_apps)
         if player.complicada:
-            return "Parte_1_Control"
+            return "Parte_2_Control"
         else:
-            return "Parte_1_Tratamiento"
+            return "Parte_2_Tratamiento"
         
 def creating_session(subsession):
     import itertools

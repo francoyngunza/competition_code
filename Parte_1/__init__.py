@@ -85,6 +85,8 @@ class Player(BasePlayer):
 
 ################              PAGES                ###########################
 
+class Introduction_0(Page):
+    pass
 
 class Introduction(Page):
     pass
@@ -116,6 +118,7 @@ class Results_copy(Page):
 
 
 page_sequence = [
+    Introduction_0,
     Introduction, 
     Example1, 
     Decision1, 
